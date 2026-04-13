@@ -4,6 +4,7 @@
    ============================================= */
 
 // ── Helpers ───────────────────────────────────
+const API_BASE = window.location.origin;
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -400,7 +401,7 @@ resumeForm?.addEventListener('submit', async (e) => {
   }
 
   try {
-    const res  = await fetch('http://localhost:3000/api/job', {
+    const res  = await fetch(`${API_BASE}/api/job`, {
       method: 'POST',
       body:   formData,
     });
@@ -450,7 +451,7 @@ contactForm?.addEventListener('submit', async (e) => {
   if (btn) { btn.textContent = 'Відправляємо…'; btn.disabled = true; }
 
   try {
-    const res  = await fetch('http://localhost:3000/api/contact', {
+    const res  = await fetch(`${API_BASE}/api/contact`, {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify({ name, contact, message }),
