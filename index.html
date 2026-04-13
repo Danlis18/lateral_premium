@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LATERAL — Sports Media Platform</title>
+  <meta name="description"
+    content="LATERAL — сучасна спортивна медіаплатформа з фокусом на контент, структуру та аналітику." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-theme="dark">
+  <a class="skip-link" href="#main">Перейти до контенту</a>
+  <div class="page-noise" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════════ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#hero" aria-label="LATERAL home">
+        <img src="assets/LogoLateral.png" alt="LATERAL" class="brand-logo" width="2048" height="573" />
+      </a>
+
+      <nav class="desktop-nav" aria-label="Основна навігація">
+        <a href="#about">Про платформу</a>
+        <a href="#categories">Категорії</a>
+        <a href="#channels">Канали</a>
+        <a href="#contact">Контакти</a>
+        <a href="#vacancies">Вакансії</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Перемкнути тему"
+          aria-pressed="false">
+          <span class="theme-toggle-track"><span class="theme-toggle-thumb"></span></span>
+        </button>
+        <button id="menuToggle" class="menu-toggle" type="button" aria-label="Відкрити меню"
+          aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+      <div class="container mobile-menu-inner">
+        <a href="#about">Про платформу</a>
+        <a href="#categories">Категорії</a>
+        <a href="#channels">Канали</a>
+        <a href="#contact">Контакти</a>
+        <a href="#vacancies">Вакансії</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════ -->
+    <section id="hero" class="hero section reveal">
+      <div class="container">
+
+        <div class="hero-grid">
+          <!-- Left: copy -->
+          <div class="hero-copy">
+            <div class="eyebrow">Спортивне медіа LATERAL</div>
+            <h1>Світ спорту без зайвого шуму</h1>
+            <p class="hero-text">
+              Сучасна платформа про спорт з чіткою структурою, сильним візуалом,
+              зручним переходом між напрямками та презентаційною подачею для аудиторії й партнерів.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#channels">Переглянути канали</a>
+              <a class="btn btn-secondary" href="#contact">Зв'язатися</a>
+            </div>
+          </div>
+
+          <!-- Right: visual -->
+          <div class="hero-visual card glow-card">
+            <div class="hero-media-frame">
+              <img src="assets/hero-tv.jpeg" alt="LATERAL TV on retro screen" class="media-image"
+                width="896" height="1112" />
+            </div>
+            <div class="hero-stats">
+              <article class="mini-stat">
+                <strong>9</strong>
+                <span>напрямків</span>
+              </article>
+              <article class="mini-stat">
+                <strong>200K+</strong>
+                <span>загальна аудиторія</span>
+              </article>
+              <article class="mini-stat">
+                <strong>1M+</strong>
+                <span>охоплення за місяць</span>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ticker — full-width strip below hero grid -->
+        <div class="ticker-wrapper" aria-label="Ключові напрямки">
+          <div class="ticker-track">
+            <div class="ticker-list" aria-hidden="false">
+              <span>Футбол</span><span>Бокс</span><span>Формула 1</span><span>Шахи</span>
+              <span>Counter-Strike 2</span><span>Баскетбол</span><span>Теніс</span><span>Dota 2</span>
+            </div>
+            <div class="ticker-list" aria-hidden="true">
+              <span>Футбол</span><span>Бокс</span><span>Формула 1</span><span>Шахи</span>
+              <span>Counter-Strike 2</span><span>Баскетбол</span><span>Теніс</span><span>Dota 2</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ABOUT
+    ═══════════════════════════════════════════ -->
+    <section id="about" class="section reveal">
+      <div class="container split-grid">
+        <div class="section-copy">
+          <div class="section-label">Про платформу</div>
+          <h2>Простота, у якій говорить контент.</h2>
+          <p>
+            LATERAL подає спортивний контент у структурованому форматі: без перевантаження,
+            зайвого шуму та хаотичної навігації.
+          </p>
+          <p>
+            Платформа побудована так, щоб користувач швидко переходив до потрібного напрямку,
+            а партнер бачив зрозумілу презентацію каналів, аудиторії та можливостей співпраці.
+          </p>
+          <div class="feature-row">
+            <div class="feature-chip">Мінімалістичний UI</div>
+            <div class="feature-chip">Dark / Light mode</div>
+          </div>
+        </div>
+
+        <div class="about-visual card">
+          <div class="about-image-wrap">
+            <img src="assets/about-tv.jpeg" alt="LATERAL sports TV concept" class="media-image"
+              width="928" height="1151" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CATEGORIES
+    ═══════════════════════════════════════════ -->
+    <section id="categories" class="section reveal">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Категорії</div>
+            <h2>Канали з чіткою сегментацією</h2>
+          </div>
+          <p>Кожен вид спорту винесено в окрему категорію з власним позиціонуванням, ресурсами та логікою взаємодії.</p>
+        </div>
+
+        <div class="sports-grid">
+
+          <!-- Football -->
+          <div class="sport-card card" data-target="football">
+            <div class="sport-thumb-wrap">
+              <img src="assets/football.jpg" alt="Футбол" class="sport-thumb" width="640" height="640"
+                loading="lazy">
+            </div>
+            <div class="sport-card-body">
+              <h3>Футбол</h3>
+              <p class="sport-short">Новини, матчі, огляди та аналітика для широкої спортивної аудиторії.</p>
+              <div class="sport-extra">
+                <p>Детальні розбори матчів, статистика, трансфери, аналітика та ексклюзивні матеріали.</p>
+                <a href="#channels" class="btn-analytics" data-activate="football">Перейти до каналу</a>
+              </div>
+              <button class="btn-toggle" type="button" aria-expanded="false">Детальніше</button>
+            </div>
+          </div>
+
+          <!-- Boxing -->
+          <div class="sport-card card" data-target="boxing">
+            <div class="sport-thumb-wrap">
+              <img src="assets/boxing.jpg" alt="Бокс" class="sport-thumb" width="640" height="640"
+                loading="lazy">
+            </div>
+            <div class="sport-card-body">
+              <h3>Бокс</h3>
+              <p class="sport-short">Головні поєдинки, інформаційні приводи та структурована подача подій.</p>
+              <div class="sport-extra">
+                <p>Матеріали про поєдинки, ключові інфоприводи, короткі розбори боїв і UFC.</p>
+                <a href="#channels" class="btn-analytics" data-activate="boxing">Перейти до каналу</a>
+              </div>
+              <button class="btn-toggle" type="button" aria-expanded="false">Детальніше</button>
+            </div>
+          </div>
+
+          <!-- CS2 -->
+          <div class="sport-card card" data-target="cs2">
+            <div class="sport-thumb-wrap">
+              <img src="assets/cs2.jpg" alt="Counter-Strike 2" class="sport-thumb" width="640" height="640"
+                loading="lazy">
+            </div>
+            <div class="sport-card-body">
+              <h3>Counter-Strike 2</h3>
+              <p class="sport-short">Кіберспорт, турніри, сцена, формати та актуальна інформація по CS2.</p>
+              <div class="sport-extra">
+                <p>Турніри, новини кіберспорту та компактна подача контенту для аудиторії.</p>
+                <a href="#channels" class="btn-analytics" data-activate="cs2">Перейти до каналу</a>
+              </div>
+              <button class="btn-toggle" type="button" aria-expanded="false">Детальніше</button>
+            </div>
+          </div>
+
+          <!-- F1 -->
+          <div class="sport-card card" data-target="f1">
+            <div class="sport-thumb-wrap">
+              <img src="assets/f1.jpg" alt="Формула 1" class="sport-thumb" width="640" height="640"
+                loading="lazy">
+            </div>
+            <div class="sport-card-body">
+              <h3>Формула 1</h3>
+              <p class="sport-short">Гран-прі, календар, підсумки вікендів і ключові теми паддоку.</p>
+              <div class="sport-extra">
+                <p>Огляди гран-прі, аналітичні підсумки, календарі та головні теми гоночних вікендів.</p>
+                <a href="#channels" class="btn-analytics" data-activate="f1">Перейти до каналу</a>
+              </div>
+              <button class="btn-toggle" type="button" aria-expanded="false">Детальніше</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CHANNELS
+    ═══════════════════════════════════════════ -->
+    <section id="channels" class="section reveal">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Канали</div>
+            <h2>Медіаресурси за видами спорту</h2>
+          </div>
+          <p>Натискання на таб відкриває відповідний канал із коротким описом та посиланнями на платформи.</p>
+        </div>
+
+        <div class="channels-layout">
+
+          <!-- Sidebar: tab list -->
+          <aside class="channel-sidebar card" role="tablist" aria-label="Види спорту">
+            <button class="channel-item active" id="tab-football" role="tab" aria-selected="true"
+              aria-controls="panel-football" data-channel="football" type="button">
+              <span class="channel-dot"></span>
+              <span>LATERAL | Футбол України</span>
+            </button>
+            <button class="channel-item" id="tab-boxing" role="tab" aria-selected="false"
+              aria-controls="panel-boxing" data-channel="boxing" type="button">
+              <span class="channel-dot"></span>
+              <span>LATERAL | Бокс / UFC</span>
+            </button>
+            <button class="channel-item" id="tab-cs2" role="tab" aria-selected="false"
+              aria-controls="panel-cs2" data-channel="cs2" type="button">
+              <span class="channel-dot"></span>
+              <span>LATERAL | Counter-Strike 2</span>
+            </button>
+            <button class="channel-item" id="tab-f1" role="tab" aria-selected="false"
+              aria-controls="panel-f1" data-channel="f1" type="button">
+              <span class="channel-dot"></span>
+              <span>LATERAL | Формула 1</span>
+            </button>
+            <button class="channel-item" id="tab-basketball" role="tab" aria-selected="false"
+              aria-controls="panel-basketball" data-channel="basketball" type="button">
+              <span class="channel-dot"></span>
+              <span>LATERAL | Баскетбол</span>
+            </button>
+            <button class="channel-item" id="tab-chess" role="tab" aria-selected="false"
+              aria-controls="panel-chess" data-channel="chess" type="button">
+              <span class="channel-dot"></span>
+              <span>LATERAL | Шахи</span>
+            </button>
+            <button class="channel-item" id="tab-dota2" role="tab" aria-selected="false"
+              aria-controls="panel-dota2" data-channel="dota2" type="button">
+              <span class="channel-dot"></span>
+              <span>LATERAL | Dota 2</span>
+            </button>
+            <button class="channel-item" id="tab-tennis" role="tab" aria-selected="false"
+              aria-controls="panel-tennis" data-channel="tennis" type="button">
+              <span class="channel-dot"></span>
+              <span>LATERAL | Теніс</span>
+            </button>
+            <button class="channel-item" id="tab-football-18" role="tab" aria-selected="false"
+              aria-controls="panel-football-18" data-channel="football-18" type="button">
+              <span class="channel-dot"></span>
+              <span>LATERAL | Футбол ⚽ 18+</span>
+            </button>
+          </aside>
+
+          <!-- Content panels -->
+          <div class="channel-content">
+
+            <!-- Football -->
+            <article class="channel-panel card is-visible" id="panel-football" role="tabpanel"
+              aria-labelledby="tab-football" data-panel="football">
+              <div class="panel-header">
+                <div>
+                  <div class="panel-label">Канал</div>
+                  <h3>LATERAL | Футбол</h3>
+                </div>
+                <div class="panel-badge">~70K підписників</div>
+              </div>
+              <p>Актуальні новини, огляди матчів, ключова аналітика, короткі формати та зручний доступ до всіх основних майданчиків каналу.</p>
+
+              <!-- Analytics block -->
+              <div class="analytics-block">
+                <div class="analytics-block-head">
+                  <div class="section-label">Аналітика</div>
+                  <h4 class="analytics-title">Коротка статистика каналу</h4>
+                </div>
+                <div class="analytics-meta">
+                  <div class="analytics-stat">
+                    <strong>~9K</strong>
+                    <span>середні перегляди</span>
+                  </div>
+                  <div class="gender-bar-wrap">
+                    <div class="gender-bar">
+                      <div class="gender-segment male" style="flex: 79.5">
+                        <strong>79.5%</strong><span>чоловіки</span>
+                      </div>
+                      <div class="gender-segment female" style="flex: 20.5">
+                        <strong>20.5%</strong><span>жінки</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="analytics-chart" data-chart="football">
+                  <div class="chart-grid" aria-hidden="true"></div>
+                  <div class="bars">
+                    <div class="bar" style="--h:10%"><span>400</span></div>
+                    <div class="bar" style="--h:40%"><span>42K</span></div>
+                    <div class="bar" style="--h:100%"><span>146K</span></div>
+                    <div class="bar" style="--h:72%"><span>106K</span></div>
+                    <div class="bar" style="--h:53%"><span>77K</span></div>
+                  </div>
+                  <div class="chart-labels">
+                    <span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="resource-row">
+                <a href="#" class="resource-pill">Telegram</a>
+                <a href="#" class="resource-pill">Instagram</a>
+                <a href="#" class="resource-pill">YouTube</a>
+              </div>
+            </article>
+
+            <!-- Boxing -->
+            <article class="channel-panel card" id="panel-boxing" role="tabpanel"
+              aria-labelledby="tab-boxing" data-panel="boxing" hidden>
+              <div class="panel-header">
+                <div>
+                  <div class="panel-label">Канал</div>
+                  <h3>LATERAL | Бокс</h3>
+                </div>
+                <div class="panel-badge">20K підписників</div>
+              </div>
+              <p>Матеріали про поєдинки, ключові інфоприводи, короткі розбори боїв і зручна структура переходу між медіаресурсами.</p>
+
+              <div class="analytics-block">
+                <div class="analytics-block-head">
+                  <div class="section-label">Аналітика</div>
+                  <h4 class="analytics-title">Коротка статистика каналу</h4>
+                </div>
+                <div class="analytics-meta">
+                  <div class="analytics-stat">
+                    <strong>~4K</strong>
+                    <span>середні перегляди</span>
+                  </div>
+                  <div class="gender-bar-wrap">
+                    <div class="gender-bar">
+                      <div class="gender-segment male" style="flex: 82">
+                        <strong>82%</strong><span>чоловіки</span>
+                      </div>
+                      <div class="gender-segment female" style="flex: 18">
+                        <strong>18%</strong><span>жінки</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="analytics-chart" data-chart="boxing">
+                  <div class="chart-grid" aria-hidden="true"></div>
+                  <div class="bars">
+                    <div class="bar" style="--h:6%"><span>2K</span></div>
+                    <div class="bar" style="--h:25%"><span>8K</span></div>
+                    <div class="bar" style="--h:100%"><span>32K</span></div>
+                    <div class="bar" style="--h:69%"><span>22K</span></div>
+                    <div class="bar" style="--h:38%"><span>12K</span></div>
+                  </div>
+                  <div class="chart-labels">
+                    <span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="resource-row">
+                <a href="#" class="resource-pill">Telegram</a>
+                <a href="#" class="resource-pill">Instagram</a>
+                <a href="#" class="resource-pill">YouTube</a>
+              </div>
+            </article>
+
+            <!-- CS2 -->
+            <article class="channel-panel card" id="panel-cs2" role="tabpanel"
+              aria-labelledby="tab-cs2" data-panel="cs2" hidden>
+              <div class="panel-header">
+                <div>
+                  <div class="panel-label">Канал</div>
+                  <h3>LATERAL | Counter-Strike 2</h3>
+                </div>
+                <div class="panel-badge">7K підписників</div>
+              </div>
+              <p>Сцена CS2, турніри, новини кіберспорту та компактна подача контенту для аудиторії, яка хоче бачити тільки головне.</p>
+
+              <div class="analytics-block">
+                <div class="analytics-block-head">
+                  <div class="section-label">Аналітика</div>
+                  <h4 class="analytics-title">Коротка статистика каналу</h4>
+                </div>
+                <div class="analytics-meta">
+                  <div class="analytics-stat">
+                    <strong>~2K</strong>
+                    <span>середні перегляди</span>
+                  </div>
+                  <div class="gender-bar-wrap">
+                    <div class="gender-bar">
+                      <div class="gender-segment male" style="flex: 91">
+                        <strong>91%</strong><span>чоловіки</span>
+                      </div>
+                      <div class="gender-segment female" style="flex: 9">
+                        <strong>9%</strong><span>жінки</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="analytics-chart" data-chart="cs2">
+                  <div class="chart-grid" aria-hidden="true"></div>
+                  <div class="bars">
+                    <div class="bar" style="--h:4%"><span>500</span></div>
+                    <div class="bar" style="--h:17%"><span>2K</span></div>
+                    <div class="bar" style="--h:100%"><span>12K</span></div>
+                    <div class="bar" style="--h:75%"><span>9K</span></div>
+                    <div class="bar" style="--h:42%"><span>5K</span></div>
+                  </div>
+                  <div class="chart-labels">
+                    <span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="resource-row">
+                <a href="#" class="resource-pill">Telegram</a>
+                <a href="#" class="resource-pill">Instagram</a>
+                <a href="#" class="resource-pill">YouTube</a>
+              </div>
+            </article>
+
+            <!-- F1 -->
+            <article class="channel-panel card" id="panel-f1" role="tabpanel"
+              aria-labelledby="tab-f1" data-panel="f1" hidden>
+              <div class="panel-header">
+                <div>
+                  <div class="panel-label">Канал</div>
+                  <h3>LATERAL | Формула 1</h3>
+                </div>
+                <div class="panel-badge">12K підписників</div>
+              </div>
+              <p>Огляди гран-прі, аналітичні підсумки, календарі та головні теми кожного гоночного вікенду у зручній структурі.</p>
+
+              <div class="analytics-block">
+                <div class="analytics-block-head">
+                  <div class="section-label">Аналітика</div>
+                  <h4 class="analytics-title">Коротка статистика каналу</h4>
+                </div>
+                <div class="analytics-meta">
+                  <div class="analytics-stat">
+                    <strong>~3K</strong>
+                    <span>середні перегляди</span>
+                  </div>
+                  <div class="gender-bar-wrap">
+                    <div class="gender-bar">
+                      <div class="gender-segment male" style="flex: 76">
+                        <strong>76%</strong><span>чоловіки</span>
+                      </div>
+                      <div class="gender-segment female" style="flex: 24">
+                        <strong>24%</strong><span>жінки</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="analytics-chart" data-chart="f1">
+                  <div class="chart-grid" aria-hidden="true"></div>
+                  <div class="bars">
+                    <div class="bar" style="--h:4%"><span>1K</span></div>
+                    <div class="bar" style="--h:21%"><span>6K</span></div>
+                    <div class="bar" style="--h:100%"><span>28K</span></div>
+                    <div class="bar" style="--h:71%"><span>20K</span></div>
+                    <div class="bar" style="--h:36%"><span>10K</span></div>
+                  </div>
+                  <div class="chart-labels">
+                    <span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="resource-row">
+                <a href="#" class="resource-pill">Telegram</a>
+                <a href="#" class="resource-pill">Instagram</a>
+                <a href="#" class="resource-pill">YouTube</a>
+              </div>
+            </article>
+
+            <!-- Basketball -->
+            <article class="channel-panel card" id="panel-basketball" role="tabpanel"
+              aria-labelledby="tab-basketball" data-panel="basketball" hidden>
+              <div class="panel-header">
+                <div>
+                  <div class="panel-label">Канал</div>
+                  <h3>LATERAL | Баскетбол</h3>
+                </div>
+                <div class="panel-badge">15K підписників</div>
+              </div>
+              <p>Огляди матчів NBA та європейських ліг, топ-моменти, статистика і швидкий доступ до всіх платформ.</p>
+
+              <div class="analytics-block">
+                <div class="analytics-block-head">
+                  <div class="section-label">Аналітика</div>
+                  <h4 class="analytics-title">Коротка статистика каналу</h4>
+                </div>
+                <div class="analytics-meta">
+                  <div class="analytics-stat">
+                    <strong>~3.5K</strong>
+                    <span>середні перегляди</span>
+                  </div>
+                  <div class="gender-bar-wrap">
+                    <div class="gender-bar">
+                      <div class="gender-segment male" style="flex: 68">
+                        <strong>68%</strong><span>чоловіки</span>
+                      </div>
+                      <div class="gender-segment female" style="flex: 32">
+                        <strong>32%</strong><span>жінки</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="analytics-chart" data-chart="basketball">
+                  <div class="chart-grid" aria-hidden="true"></div>
+                  <div class="bars">
+                    <div class="bar" style="--h:3%"><span>1K</span></div>
+                    <div class="bar" style="--h:13%"><span>4K</span></div>
+                    <div class="bar" style="--h:67%"><span>20K</span></div>
+                    <div class="bar" style="--h:100%"><span>30K</span></div>
+                    <div class="bar" style="--h:47%"><span>14K</span></div>
+                  </div>
+                  <div class="chart-labels">
+                    <span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="resource-row">
+                <a href="#" class="resource-pill">Telegram</a>
+                <a href="#" class="resource-pill">Instagram</a>
+                <a href="#" class="resource-pill">YouTube</a>
+              </div>
+            </article>
+
+            <!-- Chess -->
+            <article class="channel-panel card" id="panel-chess" role="tabpanel"
+              aria-labelledby="tab-chess" data-panel="chess" hidden>
+              <div class="panel-header">
+                <div>
+                  <div class="panel-label">Канал</div>
+                  <h3>LATERAL | Шахи</h3>
+                </div>
+                <div class="panel-badge">5K підписників</div>
+              </div>
+              <p>Партії, розбори, турніри та найцікавіші моменти зі світу шахів у короткому і зрозумілому форматі.</p>
+
+              <div class="analytics-block">
+                <div class="analytics-block-head">
+                  <div class="section-label">Аналітика</div>
+                  <h4 class="analytics-title">Коротка статистика каналу</h4>
+                </div>
+                <div class="analytics-meta">
+                  <div class="analytics-stat">
+                    <strong>~1.5K</strong>
+                    <span>середні перегляди</span>
+                  </div>
+                  <div class="gender-bar-wrap">
+                    <div class="gender-bar">
+                      <div class="gender-segment male" style="flex: 74">
+                        <strong>74%</strong><span>чоловіки</span>
+                      </div>
+                      <div class="gender-segment female" style="flex: 26">
+                        <strong>26%</strong><span>жінки</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="analytics-chart" data-chart="chess">
+                  <div class="chart-grid" aria-hidden="true"></div>
+                  <div class="bars">
+                    <div class="bar" style="--h:2%"><span>300</span></div>
+                    <div class="bar" style="--h:14%"><span>2K</span></div>
+                    <div class="bar" style="--h:57%"><span>8K</span></div>
+                    <div class="bar" style="--h:100%"><span>14K</span></div>
+                    <div class="bar" style="--h:43%"><span>6K</span></div>
+                  </div>
+                  <div class="chart-labels">
+                    <span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="resource-row">
+                <a href="#" class="resource-pill">Telegram</a>
+                <a href="#" class="resource-pill">Instagram</a>
+                <a href="#" class="resource-pill">YouTube</a>
+              </div>
+            </article>
+
+            <!-- Dota 2 -->
+            <article class="channel-panel card" id="panel-dota2" role="tabpanel"
+              aria-labelledby="tab-dota2" data-panel="dota2" hidden>
+              <div class="panel-header">
+                <div>
+                  <div class="panel-label">Канал</div>
+                  <h3>LATERAL | Dota 2</h3>
+                </div>
+                <div class="panel-badge">9K підписників</div>
+              </div>
+              <p>Новини сцени, турніри, патчі та короткі аналітичні розбори для фанатів Dota 2.</p>
+
+              <div class="analytics-block">
+                <div class="analytics-block-head">
+                  <div class="section-label">Аналітика</div>
+                  <h4 class="analytics-title">Коротка статистика каналу</h4>
+                </div>
+                <div class="analytics-meta">
+                  <div class="analytics-stat">
+                    <strong>~2.5K</strong>
+                    <span>середні перегляди</span>
+                  </div>
+                  <div class="gender-bar-wrap">
+                    <div class="gender-bar">
+                      <div class="gender-segment male" style="flex: 88">
+                        <strong>88%</strong><span>чоловіки</span>
+                      </div>
+                      <div class="gender-segment female" style="flex: 12">
+                        <strong>12%</strong><span>жінки</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="analytics-chart" data-chart="dota2">
+                  <div class="chart-grid" aria-hidden="true"></div>
+                  <div class="bars">
+                    <div class="bar" style="--h:2%"><span>400</span></div>
+                    <div class="bar" style="--h:17%"><span>3K</span></div>
+                    <div class="bar" style="--h:100%"><span>18K</span></div>
+                    <div class="bar" style="--h:67%"><span>12K</span></div>
+                    <div class="bar" style="--h:39%"><span>7K</span></div>
+                  </div>
+                  <div class="chart-labels">
+                    <span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="resource-row">
+                <a href="#" class="resource-pill">Telegram</a>
+                <a href="#" class="resource-pill">Instagram</a>
+                <a href="#" class="resource-pill">YouTube</a>
+              </div>
+            </article>
+
+            <!-- Tennis -->
+            <article class="channel-panel card" id="panel-tennis" role="tabpanel"
+              aria-labelledby="tab-tennis" data-panel="tennis" hidden>
+              <div class="panel-header">
+                <div>
+                  <div class="panel-label">Канал</div>
+                  <h3>LATERAL | Теніс</h3>
+                </div>
+                <div class="panel-badge">11K підписників</div>
+              </div>
+              <p>ATP, WTA, турніри Grand Slam, аналітика матчів і найважливіші новини зі світу тенісу.</p>
+
+              <div class="analytics-block">
+                <div class="analytics-block-head">
+                  <div class="section-label">Аналітика</div>
+                  <h4 class="analytics-title">Коротка статистика каналу</h4>
+                </div>
+                <div class="analytics-meta">
+                  <div class="analytics-stat">
+                    <strong>~3K</strong>
+                    <span>середні перегляди</span>
+                  </div>
+                  <div class="gender-bar-wrap">
+                    <div class="gender-bar">
+                      <div class="gender-segment male" style="flex: 58">
+                        <strong>58%</strong><span>чоловіки</span>
+                      </div>
+                      <div class="gender-segment female" style="flex: 42">
+                        <strong>42%</strong><span>жінки</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="analytics-chart" data-chart="tennis">
+                  <div class="chart-grid" aria-hidden="true"></div>
+                  <div class="bars">
+                    <div class="bar" style="--h:2%"><span>600</span></div>
+                    <div class="bar" style="--h:14%"><span>4K</span></div>
+                    <div class="bar" style="--h:79%"><span>22K</span></div>
+                    <div class="bar" style="--h:100%"><span>28K</span></div>
+                    <div class="bar" style="--h:36%"><span>10K</span></div>
+                  </div>
+                  <div class="chart-labels">
+                    <span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="resource-row">
+                <a href="#" class="resource-pill">Telegram</a>
+                <a href="#" class="resource-pill">Instagram</a>
+                <a href="#" class="resource-pill">YouTube</a>
+              </div>
+            </article>
+
+            <!-- Football 18+ -->
+            <article class="channel-panel card" id="panel-football-18" role="tabpanel"
+              aria-labelledby="tab-football-18" data-panel="football-18" hidden>
+              <div class="panel-header">
+                <div>
+                  <div class="panel-label">Канал</div>
+                  <h3>LATERAL | Футбол ⚽ 18+</h3>
+                </div>
+                <div class="panel-badge">25K підписників</div>
+              </div>
+              <p>Контент 18+: інсайди, чутки, закулісся футболу та більш відверта аналітика для дорослої аудиторії.</p>
+
+              <div class="analytics-block">
+                <div class="analytics-block-head">
+                  <div class="section-label">Аналітика</div>
+                  <h4 class="analytics-title">Коротка статистика каналу</h4>
+                </div>
+                <div class="analytics-meta">
+                  <div class="analytics-stat">
+                    <strong>~6K</strong>
+                    <span>середні перегляди</span>
+                  </div>
+                  <div class="gender-bar-wrap">
+                    <div class="gender-bar">
+                      <div class="gender-segment male" style="flex: 89">
+                        <strong>89%</strong><span>чоловіки</span>
+                      </div>
+                      <div class="gender-segment female" style="flex: 11">
+                        <strong>11%</strong><span>жінки</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="analytics-chart" data-chart="football-18">
+                  <div class="chart-grid" aria-hidden="true"></div>
+                  <div class="bars">
+                    <div class="bar" style="--h:2%"><span>1K</span></div>
+                    <div class="bar" style="--h:14%"><span>8K</span></div>
+                    <div class="bar" style="--h:72%"><span>42K</span></div>
+                    <div class="bar" style="--h:100%"><span>58K</span></div>
+                    <div class="bar" style="--h:52%"><span>30K</span></div>
+                  </div>
+                  <div class="chart-labels">
+                    <span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="resource-row">
+                <a href="#" class="resource-pill">Telegram</a>
+                <a href="#" class="resource-pill">Instagram</a>
+                <a href="#" class="resource-pill">YouTube</a>
+              </div>
+            </article>
+
+          </div><!-- /channel-content -->
+        </div><!-- /channels-layout -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════════════ -->
+    <section id="contact" class="section reveal">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Контакти</div>
+            <h2>Зв'язатися з нами</h2>
+          </div>
+          <p>Форма для партнерств, співпраці та комерційних запитів.</p>
+        </div>
+
+        <form class="contact-form card" novalidate>
+          <div class="form-row">
+            <label>
+              <span>Ім'я / назва</span>
+              <input type="text" name="name" placeholder="Ваше ім'я або бренд" autocomplete="name" />
+            </label>
+            <label>
+              <span>Контакт</span>
+              <input type="text" name="contact" placeholder="Telegram / Email" />
+            </label>
+          </div>
+          <label>
+            <span>Повідомлення</span>
+            <textarea name="message" rows="5" placeholder="Коротко опишіть запит"></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Надіслати запит</button>
+            <p class="form-note">Відповідь надходить протягом 24 годин.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         VACANCIES
+    ═══════════════════════════════════════════ -->
+    <section id="vacancies" class="section reveal">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Команда</div>
+            <h2>Вакансії</h2>
+          </div>
+          <p>Ми шукаємо талановитих людей у команду LATERAL. Оберіть вакансію та надішліть резюме.</p>
+        </div>
+
+        <div class="vacancies-grid">
+
+          <!-- Vacancy: Content Manager -->
+          <div class="vacancy-card card">
+            <div class="vacancy-header">
+              <div class="vacancy-meta">
+                <span class="vacancy-tag">Контент</span>
+                <span class="vacancy-type">Full-time</span>
+              </div>
+              <h3 class="vacancy-title">Контент-менеджер</h3>
+              <p class="vacancy-short">Створення та публікація спортивного контенту для Telegram, Instagram та YouTube.</p>
+            </div>
+
+            <div class="vacancy-details">
+              <div class="vacancy-details-inner">
+                <h4>Про позицію</h4>
+                <p>Ми шукаємо контент-менеджера, який відповідатиме за щоденне ведення каналів платформи LATERAL. Ви будете створювати тексти, добирати візуали, планувати публікації та взаємодіяти з аудиторією.</p>
+                <h4>Що ми очікуємо:</h4>
+                <ul>
+                  <li>Розуміння спортивної тематики</li>
+                  <li>Досвід ведення Telegram та Instagram</li>
+                  <li>Вміння працювати з дедлайнами</li>
+                  <li>Базове знання аналітики</li>
+                </ul>
+                <h4>Ми пропонуємо:</h4>
+                <ul>
+                  <li>Гнучкий графік роботи</li>
+                  <li>Дистанційна зайнятість</li>
+                  <li>Можливість зростання в медіасередовищі</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="vacancy-actions">
+              <button class="btn-vacancy-toggle" type="button" aria-expanded="false">Детальніше</button>
+              <button class="btn btn-primary btn-send-resume" type="button"
+                data-position="Контент-менеджер">Надіслати резюме</button>
+            </div>
+          </div>
+
+          <!-- Vacancy: Graphic Designer -->
+          <div class="vacancy-card card">
+            <div class="vacancy-header">
+              <div class="vacancy-meta">
+                <span class="vacancy-tag">Дизайн</span>
+                <span class="vacancy-type">Part-time</span>
+              </div>
+              <h3 class="vacancy-title">Графічний дизайнер</h3>
+              <p class="vacancy-short">Розробка візуального контенту для спортивних каналів платформи.</p>
+            </div>
+
+            <div class="vacancy-details">
+              <div class="vacancy-details-inner">
+                <h4>Про позицію</h4>
+                <p>Шукаємо дизайнера для створення обкладинок, шаблонів публікацій та іміджевих матеріалів для всіх каналів LATERAL.</p>
+                <h4>Що ми очікуємо:</h4>
+                <ul>
+                  <li>Впевнена робота у Figma / Adobe</li>
+                  <li>Відчуття стилю та типографіки</li>
+                  <li>Розуміння спортивної естетики</li>
+                  <li>Портфоліо з прикладами робіт</li>
+                </ul>
+                <h4>Ми пропонуємо:</h4>
+                <ul>
+                  <li>Творча свобода у рамках брендбуку</li>
+                  <li>Part-time / проектна зайнятість</li>
+                  <li>Стабільний потік завдань</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="vacancy-actions">
+              <button class="btn-vacancy-toggle" type="button" aria-expanded="false">Детальніше</button>
+              <button class="btn btn-primary btn-send-resume" type="button"
+                data-position="Графічний дизайнер">Надіслати резюме</button>
+            </div>
+          </div>
+
+          <!-- Vacancy: Video Editor -->
+          <div class="vacancy-card card">
+            <div class="vacancy-header">
+              <div class="vacancy-meta">
+                <span class="vacancy-tag">Відео</span>
+                <span class="vacancy-type">Full-time</span>
+              </div>
+              <h3 class="vacancy-title">Відеомонтажер</h3>
+              <p class="vacancy-short">Монтаж відеоконтенту для YouTube та Reels / Shorts-форматів.</p>
+            </div>
+
+            <div class="vacancy-details">
+              <div class="vacancy-details-inner">
+                <h4>Про позицію</h4>
+                <p>Шукаємо монтажера для роботи з відеоматеріалами спортивних подій. Ваше завдання — швидко та якісно готувати відео для YouTube і коротких форматів у стилі LATERAL.</p>
+                <h4>Що ми очікуємо:</h4>
+                <ul>
+                  <li>Досвід монтажу у Premiere Pro / DaVinci</li>
+                  <li>Розуміння коротких форматів</li>
+                  <li>Вміння працювати з темпом і динамікою</li>
+                  <li>Швидкість обробки матеріалу</li>
+                </ul>
+                <h4>Ми пропонуємо:</h4>
+                <ul>
+                  <li>Постійний потік матеріалу</li>
+                  <li>Гнучкий графік роботи</li>
+                  <li>Конкурентна оплата</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="vacancy-actions">
+              <button class="btn-vacancy-toggle" type="button" aria-expanded="false">Детальніше</button>
+              <button class="btn btn-primary btn-send-resume" type="button"
+                data-position="Відеомонтажер">Надіслати резюме</button>
+            </div>
+          </div>
+
+        </div><!-- /vacancies-grid -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer reveal">
+    <div class="container footer-inner">
+      <a class="brand footer-brand" href="#hero">
+        <img src="assets/LogoLateral.png" alt="LATERAL" class="brand-logo" width="2048" height="573"
+          loading="lazy" />
+      </a>
+      <p>© 2026 LATERAL. Усі права захищені.</p>
+      <div class="footer-links">
+        <a href="#">Telegram</a>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       RESUME MODAL
+  ═══════════════════════════════════════════ -->
+  <div id="resumeModal" class="modal" role="dialog" aria-modal="true"
+    aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <div class="section-label" id="modalPositionLabel">Вакансія</div>
+          <h3 id="modalTitle">Надіслати резюме</h3>
+        </div>
+        <button class="modal-close" type="button" aria-label="Закрити">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round">
+            <path d="M2 2l14 14M16 2L2 16" />
+          </svg>
+        </button>
+      </div>
+
+      <form class="modal-form" id="resumeForm" novalidate>
+
+        <input type="hidden" name="position" id="resumePosition" />
+
+        <!-- Name + Contact -->
+        <div class="form-row">
+          <div class="form-field">
+            <span class="field-label">Ім'я</span>
+            <input type="text" name="name" placeholder="Ваше ім'я" autocomplete="name" />
+          </div>
+          <div class="form-field">
+            <span class="field-label">Контакт</span>
+            <input type="text" name="contact" placeholder="Telegram / Email" />
+          </div>
+        </div>
+
+        <!-- File upload -->
+        <div class="form-field">
+          <span class="field-label">Резюме (PDF, DOC, DOCX або фото)</span>
+          <div class="file-drop-zone" id="fileDropZone">
+            <input type="file" id="resumeFile" name="file"
+              accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.webp,image/*"
+              class="file-input" aria-label="Завантажити резюме" />
+            <div class="file-drop-content">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                <polyline points="17 8 12 3 7 8" />
+                <line x1="12" y1="3" x2="12" y2="15" />
+              </svg>
+              <p class="file-drop-hint">Перетягніть файл або <span>натисніть для вибору</span></p>
+              <p class="file-name-display" id="fileNameDisplay" aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Message textarea -->
+        <div class="form-field">
+          <span class="field-label">Коротко про себе</span>
+          <textarea name="message" id="resumeMessage" rows="5"
+            placeholder="Розкажіть про себе, досвід і чому вас цікавить ця позиція..."
+            maxlength="1000"></textarea>
+          <div class="char-counter">
+            <span id="charCount">0</span> / 1000
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">Надіслати</button>
+          <button type="button" class="btn btn-secondary modal-cancel">Скасувати</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
