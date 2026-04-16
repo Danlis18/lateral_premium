@@ -885,6 +885,7 @@ body[data-theme="light"] .theme-toggle-thumb { transform: translateX(24px); }
   background: rgba(255, 0, 0, 0.15);
 }
 
+/* Twitch */
 .resource-pill.twitch:hover {
   background: rgba(145, 70, 255, 0.15);
   border-color: #9146ff;
