@@ -11,10 +11,23 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 
 // ── Theme ─────────────────────────────────────
 const themeToggle = $('#themeToggle');
+const heroImage = document.getElementById('heroImage');
+
+function updateThemeAssets(theme) {
+  if (!heroImage) return;
+
+  if (theme === 'light') {
+    heroImage.src = 'assets/lateral-about-light.png';
+  } else {
+    heroImage.src = 'assets/lateral-about-dark.png';
+  }
+}
 
 function applyTheme(theme) {
   document.body.setAttribute('data-theme', theme);
   themeToggle?.setAttribute('aria-pressed', String(theme === 'light'));
+
+    updateThemeAssets(theme);
 }
 
 const storedTheme    = localStorage.getItem('lateral-theme');
