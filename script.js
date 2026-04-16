@@ -25,9 +25,9 @@ function updateThemeAssets(theme) {
 
 function applyTheme(theme) {
   document.body.setAttribute('data-theme', theme);
+  updateThemeAssets(theme);
   themeToggle?.setAttribute('aria-pressed', String(theme === 'light'));
 
-    updateThemeAssets(theme);
 }
 
 const storedTheme    = localStorage.getItem('lateral-theme');
