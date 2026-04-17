@@ -542,13 +542,23 @@ body[data-theme="light"] .theme-toggle-thumb { transform: translateX(24px); }
 }
 
 .about-visual { padding: 16px; }
+
 .about-image-wrap {
   overflow: hidden;
   border-radius: 18px;
   background: var(--surface-2);
   aspect-ratio: 4 / 4.2;
+  position: relative;
 }
 .about-visual:hover .media-image { transform: scale(1.035); }
+
+.media-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /* Feature chips */
 .feature-row {
@@ -568,6 +578,10 @@ body[data-theme="light"] .theme-toggle-thumb { transform: translateX(24px); }
   font-size: 14px;
   font-weight: 500;
   color: var(--text);
+}
+
+#imgLight {
+  display: none;
 }
 
 /* ── Categories / Sport Cards ────────────────── */

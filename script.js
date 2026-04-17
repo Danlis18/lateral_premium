@@ -11,17 +11,22 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 
 // ── Theme ─────────────────────────────────────
 const themeToggle = $('#themeToggle');
-const heroImage = document.getElementById('heroImage');
+const imgDark = document.getElementById('imgDark');
+const imgLight = document.getElementById('imgLight');
 const videoDark = document.getElementById('videoDark');
 const videoLight = document.getElementById('videoLight');
 
 function updateThemeAssets(theme) {
 
   // 🖼 IMAGE
-  if (heroImage) {
-    heroImage.src = theme === 'light'
-      ? 'assets/lateral-about-light.png'
-      : 'assets/lateral-about-dark.png';
+  if (imgDark && imgLight) {
+    if (theme === 'light') {
+      imgDark.style.display = 'none';
+      imgLight.style.display = 'block';
+    } else {
+      imgDark.style.display = 'block';
+      imgLight.style.display = 'none';
+    }
   }
 
   // 🎥 VIDEO (без load, без лагу)
@@ -60,11 +65,22 @@ themeToggle?.addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  videoDark.muted = true;
+  videoLight.muted = true;
+
+  videoDark.setAttribute('playsinline', '');
+  videoLight.setAttribute('playsinline', '');
+
   setTimeout(() => {
     videoDark?.play().catch(() => {});
     videoLight?.play().catch(() => {});
   }, 50);
 });
+
+document.addEventListener('touchstart', () => {
+  videoDark?.play().catch(() => {});
+  videoLight?.play().catch(() => {});
+}, { once: true });
 
 // ── Mobile Menu ───────────────────────────────
 const menuToggle = $('#menuToggle');
