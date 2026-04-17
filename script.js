@@ -12,30 +12,56 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 // ── Theme ─────────────────────────────────────
 const themeToggle = $('#themeToggle');
 const heroImage = document.getElementById('heroImage');
+const heroVideo = document.getElementById('heroVideo');
 
 function updateThemeAssets(theme) {
-  if (!heroImage) return;
+  // 🖼 IMAGE
+  if (heroImage) {
+    heroImage.src = theme === 'light'
+      ? 'assets/lateral-about-light.png'
+      : 'assets/lateral-about-dark.png';
+  }
 
-  if (theme === 'light') {
-    heroImage.src = 'assets/lateral-about-light.png';
-  } else {
-    heroImage.src = 'assets/lateral-about-dark.png';
+  // 🎥 VIDEO
+  if (heroVideo) {
+    const isLight = theme === 'light';
+
+    const webmSrc = isLight
+      ? '/assets/lateral-about-light.webm'
+      : '/assets/lateral-about-dark.webm';
+
+    const mp4Src = isLight
+      ? '/assets/lateral-about-light.mp4'
+      : '/assets/lateral-about-dark.mp4';
+
+    // 🔥 міняємо source правильно
+    const sources = heroVideo.querySelectorAll('source');
+
+    if (sources[0]) sources[0].src = webmSrc;
+    if (sources[1]) sources[1].src = mp4Src;
+
+    // 🔥 перезавантажуємо відео
+    heroVideo.load();
   }
 }
 
 function applyTheme(theme) {
   document.body.setAttribute('data-theme', theme);
   updateThemeAssets(theme);
-  themeToggle?.setAttribute('aria-pressed', String(theme === 'light'));
 
+  themeToggle?.setAttribute('aria-pressed', String(theme === 'light'));
 }
 
-const storedTheme    = localStorage.getItem('lateral-theme');
-const systemTheme    = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+// старт
+const storedTheme = localStorage.getItem('lateral-theme');
+const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+
 applyTheme(storedTheme || systemTheme);
 
+// клік
 themeToggle?.addEventListener('click', () => {
   const next = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+
   applyTheme(next);
   localStorage.setItem('lateral-theme', next);
 });

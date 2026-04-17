@@ -4,6 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ── Preload critical assets ──────────────── -->
+  <link rel="preload" as="video" href="/assets/lateral-about-dark.mp4" type="video/mp4">
+  <link rel="preload" as="video" href="/assets/lateral-about-light.mp4" type="video/mp4">
+  <!-- Preload both about images → instant theme switch, no delay on first toggle -->
+  <link rel="preload" as="image" href="assets/lateral-about-dark.png" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/lateral-about-light.png">
+
 
   <!-- ── Primary SEO ─────────────────────────── -->
   <title>LATERAL — Спортивне Медіа | Футбол, Бокс, CS2, Формула-1</title>
@@ -14,6 +21,8 @@
   <meta name="robots" content="index, follow" />
   <meta name="author" content="LATERAL" />
   <link rel="canonical" href="https://lateral.com.ua/" />
+  <link rel="alternate" hreflang="uk" href="https://lateral.com.ua/" />
+  <link rel="alternate" hreflang="x-default" href="https://lateral.com.ua/" />
   <link rel="sitemap" type="application/xml" href="sitemap.xml" />
 
   <!-- ── Open Graph ─────────────────────────── -->
@@ -22,8 +31,8 @@
   <meta property="og:title" content="LATERAL — Спортивне Медіа | Футбол, Бокс, CS2, Формула-1" />
   <meta property="og:description"
     content="LATERAL — провідна спортивна медіаплатформа: футбол, бокс, CS2, Формула-1, баскетбол, теніс, шахи, Dota 2. 200K+ аудиторія, 1M+ охоплення щомісяця." />
-  <meta property="og:url" content="https://lateral.ua/" />
-  <meta property="og:image" content="https://lateral.ua/assets/LogoLateral.png" />
+  <meta property="og:url" content="https://lateral.com.ua/" />
+  <meta property="og:image" content="https://lateral.com.ua/assets/LogoLateral.png" />
   <meta property="og:image:width" content="2048" />
   <meta property="og:image:height" content="573" />
   <meta property="og:image:alt" content="LATERAL — Спортивна медіаплатформа" />
@@ -34,7 +43,7 @@
   <meta name="twitter:title" content="LATERAL — Спортивне Медіа | Футбол, Бокс, CS2, Формула-1" />
   <meta name="twitter:description"
     content="LATERAL — провідна спортивна медіаплатформа: футбол, бокс, CS2, Формула-1. 200K+ аудиторія." />
-  <meta name="twitter:image" content="https://lateral.ua/assets/LogoLateral.png" />
+  <meta name="twitter:image" content="https://lateral.com.ua/assets/LogoLateral.png" />
 
   <!-- ── Favicons ───────────────────────────── -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-lateral-32x32.png">
@@ -56,12 +65,12 @@
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://lateral.ua/#organization",
+        "@id": "https://lateral.com.ua/#organization",
         "name": "LATERAL",
-        "url": "https://lateral.ua",
+        "url": "https://lateral.com.ua",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://lateral.ua/assets/LogoLateral.png",
+          "url": "https://lateral.com.ua/assets/LogoLateral.png",
           "width": 2048,
           "height": 573
         },
@@ -77,14 +86,33 @@
       },
       {
         "@type": "WebSite",
-        "@id": "https://lateral.ua/#website",
+        "@id": "https://lateral.com.ua/#website",
         "name": "LATERAL",
-        "url": "https://lateral.ua",
+        "url": "https://lateral.com.ua",
         "description": "LATERAL — спортивне медіа з контентом по футболу, боксу, CS2, Формулі 1 та кіберспорту",
         "inLanguage": "uk",
         "publisher": {
-          "@id": "https://lateral.ua/#organization"
+          "@id": "https://lateral.com.ua/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://lateral.com.ua/#channels?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
         }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "LATERAL — Спортивне медіа",
+            "item": "https://lateral.com.ua/"
+          }
+        ]
       }
     ]
   }
@@ -198,11 +226,21 @@
                 height="1112" />
             </div> -->
 
-            <div class="hero-media-frame">
-              <video class="media-image" width="1112" height="896" autoplay muted loop playsinline>
-                <source src="assets/LATERAL-Video-Logos.MP4" type="video/mp4">
-              </video>
-            </div>
+<div class="hero-media-frame">
+  <video 
+    id="heroVideo"
+    class="hero-video"
+    autoplay 
+    muted 
+    loop 
+    playsinline
+    preload="metadata"
+  >
+    <!-- один і той самий ролик в різних форматах -->
+    <source src="/assets/lateral-about-dark.webm" type="video/webm">
+    <source src="/assets/lateral-about-dark.mp4" type="video/mp4">
+  </video>
+</div>
 
             <div class="hero-stats">
               <article class="mini-stat">
@@ -433,7 +471,7 @@
 
               <div class="resource-row">
 
-                <a href="https://t.me/+pEMM2tsayH1iOTFi" class="resource-pill tg" target="_blank">
+                <a href="https://t.me/+pEMM2tsayH1iOTFi" class="resource-pill tg" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -443,7 +481,7 @@
                   Telegram
                 </a>
 
-                <a href="https://www.instagram.com/lateral_football" class="resource-pill ig" target="_blank">
+                <a href="https://www.instagram.com/lateral_football" class="resource-pill ig" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -454,7 +492,7 @@
                 </a>
 
                 <a href="https://www.tiktok.com/@lateral_football" class="resource-pill tt" target="_blank"
-                  rel="noopener noreferrer" aria-label="TikTok">
+                  rel="noopener noreferrer nofollow" aria-label="TikTok">
                   <span class="icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                       <path fill="currentColor"
@@ -464,7 +502,7 @@
                   TikTok
                 </a>
 
-                <a href="https://youtube.com/@lateral_football" class="resource-pill yt" target="_blank">
+                <a href="https://youtube.com/@lateral_football" class="resource-pill yt" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -531,7 +569,7 @@
               <div class="resource-row">
 
 
-                                  <a href="https://t.me/+Ap83hUAKPWQ3ZTQ8" class="resource-pill tg" target="_blank">
+                                  <a href="https://t.me/+Ap83hUAKPWQ3ZTQ8" class="resource-pill tg" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -541,7 +579,7 @@
                   Telegram
                 </a>
 
-                <a href="https://www.instagram.com/lateral_boxing" class="resource-pill ig" target="_blank">
+                <a href="https://www.instagram.com/lateral_boxing" class="resource-pill ig" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -552,7 +590,7 @@
                 </a>
 
                 <a href="https://www.tiktok.com/@lateral_boxing" class="resource-pill tt" target="_blank"
-                  rel="noopener noreferrer" aria-label="TikTok">
+                  rel="noopener noreferrer nofollow" aria-label="TikTok">
                   <span class="icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                       <path fill="currentColor"
@@ -562,7 +600,7 @@
                   TikTok
                 </a>
 
-                <a href="https://youtube.com/@lateral_boxing" class="resource-pill yt" target="_blank">
+                <a href="https://youtube.com/@lateral_boxing" class="resource-pill yt" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -625,7 +663,7 @@
                 тільки головне.</p>
 
               <div class="resource-row">
-                   <a href="https://t.me/+IU8AUoQ6GRwxNjU6" class="resource-pill tg" target="_blank">
+                   <a href="https://t.me/+IU8AUoQ6GRwxNjU6" class="resource-pill tg" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -635,7 +673,7 @@
                   Telegram
                 </a>
 
-                <a href="https://www.instagram.com/lateral_cs" class="resource-pill ig" target="_blank">
+                <a href="https://www.instagram.com/lateral_cs" class="resource-pill ig" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -646,7 +684,7 @@
                 </a>
 
                 <a href="https://www.tiktok.com/@lateral_cs" class="resource-pill tt" target="_blank"
-                  rel="noopener noreferrer" aria-label="TikTok">
+                  rel="noopener noreferrer nofollow" aria-label="TikTok">
                   <span class="icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                       <path fill="currentColor"
@@ -656,7 +694,7 @@
                   TikTok
                 </a>
 
-                <a href="https://youtube.com/@lateral_boxing" class="resource-pill yt" target="_blank">
+                <a href="https://youtube.com/@lateral_boxing" class="resource-pill yt" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -665,7 +703,7 @@
                   </span>
                   YouTube
                 </a>
-                <a href="https://www.twitch.tv/lateral_cs" class="resource-pill twitch" target="_blank">
+                <a href="https://www.twitch.tv/lateral_cs" class="resource-pill twitch" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
   <svg viewBox="0 0 24 24">
     <path fill="currentColor" d="M4.265 0L0 4.265v15.47h5.206V24l4.265-4.265h3.676L24 9.412V0H4.265zm17.735 8.824l-4.235 4.235H13.06l-3.676 3.676V13.06H5.206V1.765H22v7.06zM17.647 4.706h-1.765v4.706h1.765V4.706zm-4.706 0H11.176v4.706h1.765V4.706z"/>
@@ -728,7 +766,7 @@
 
               <div class="resource-row">
           
-                  <a href="https://t.me/+gk5zxB7gPtZkZDYy" class="resource-pill tg" target="_blank">
+                  <a href="https://t.me/+gk5zxB7gPtZkZDYy" class="resource-pill tg" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -738,7 +776,7 @@
                   Telegram
                 </a>
 
-                <a href="https://www.instagram.com/lateral_formula1" class="resource-pill ig" target="_blank">
+                <a href="https://www.instagram.com/lateral_formula1" class="resource-pill ig" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -749,7 +787,7 @@
                 </a>
 
                 <a href="https://www.tiktok.com/@lateral_formula1" class="resource-pill tt" target="_blank"
-                  rel="noopener noreferrer" aria-label="TikTok">
+                  rel="noopener noreferrer nofollow" aria-label="TikTok">
                   <span class="icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                       <path fill="currentColor"
@@ -759,7 +797,7 @@
                   TikTok
                 </a>
 
-                <a href="https://youtube.com/@lateral_formula1" class="resource-pill yt" target="_blank">
+                <a href="https://youtube.com/@lateral_formula1" class="resource-pill yt" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -823,7 +861,7 @@
               <p>Контент 18+: інсайди, чутки, закулісся футболу та більш відверта аналітика для дорослої аудиторії.</p>
 
               <div class="resource-row">
-                   <a href="http://t.me/lateralfootball" class="resource-pill tg" target="_blank">
+                   <a href="https://t.me/lateralfootball" class="resource-pill tg" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -885,7 +923,7 @@
               <p>Огляди матчів NBA та європейських ліг, топ-моменти, статистика і швидкий доступ до всіх платформ.</p>
 
               <div class="resource-row">
-                  <a href="https://t.me/+hbwuSZxnMNY2YmMy" class="resource-pill tg" target="_blank">
+                  <a href="https://t.me/+hbwuSZxnMNY2YmMy" class="resource-pill tg" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -895,7 +933,7 @@
                   Telegram
                 </a>
 
-                <a href="https://www.instagram.com/lateral_basketball" class="resource-pill ig" target="_blank">
+                <a href="https://www.instagram.com/lateral_basketball" class="resource-pill ig" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -906,7 +944,7 @@
                 </a>
 
                 <a href="https://www.tiktok.com/@lateral_basketball" class="resource-pill tt" target="_blank"
-                  rel="noopener noreferrer" aria-label="TikTok">
+                  rel="noopener noreferrer nofollow" aria-label="TikTok">
                   <span class="icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                       <path fill="currentColor"
@@ -916,7 +954,7 @@
                   TikTok
                 </a>
 
-                <a href="https://youtube.com/@lateral_basketball" class="resource-pill yt" target="_blank">
+                <a href="https://youtube.com/@lateral_basketball" class="resource-pill yt" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -977,7 +1015,7 @@
               </div>
               <p>Партії, розбори, турніри та найцікавіші моменти зі світу шахів у короткому і зрозумілому форматі.</p>
               <div class="resource-row">
-                     <a href="https://t.me/+QNGYFoZHFV9mMTky" class="resource-pill tg" target="_blank">
+                     <a href="https://t.me/+QNGYFoZHFV9mMTky" class="resource-pill tg" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -987,7 +1025,7 @@
                   Telegram
                 </a>
 
-                <a href="https://www.instagram.com/lateral_chess" class="resource-pill ig" target="_blank">
+                <a href="https://www.instagram.com/lateral_chess" class="resource-pill ig" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -998,7 +1036,7 @@
                 </a>
 
                 <a href="https://www.tiktok.com/@lateral_chess" class="resource-pill tt" target="_blank"
-                  rel="noopener noreferrer" aria-label="TikTok">
+                  rel="noopener noreferrer nofollow" aria-label="TikTok">
                   <span class="icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                       <path fill="currentColor"
@@ -1008,7 +1046,7 @@
                   TikTok
                 </a>
 
-                <a href="https://youtube.com/@lateral_chess" class="resource-pill yt" target="_blank">
+                <a href="https://youtube.com/@lateral_chess" class="resource-pill yt" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -1070,7 +1108,7 @@
               <p>Новини сцени, турніри, патчі та короткі аналітичні розбори для фанатів Dota 2.</p>
 
               <div class="resource-row">
-                  <a href="https://t.me/+yBhStFfCHcQyNmYy" class="resource-pill tg" target="_blank">
+                  <a href="https://t.me/+yBhStFfCHcQyNmYy" class="resource-pill tg" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -1080,7 +1118,7 @@
                   Telegram
                 </a>
 
-                <a href="https://www.instagram.com/lateral_dota2" class="resource-pill ig" target="_blank">
+                <a href="https://www.instagram.com/lateral_dota2" class="resource-pill ig" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -1091,7 +1129,7 @@
                 </a>
 
                 <a href="https://www.tiktok.com/@lateral_dota2" class="resource-pill tt" target="_blank"
-                  rel="noopener noreferrer" aria-label="TikTok">
+                  rel="noopener noreferrer nofollow" aria-label="TikTok">
                   <span class="icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                       <path fill="currentColor"
@@ -1101,7 +1139,7 @@
                   TikTok
                 </a>
 
-                <a href="https://youtube.com/@lateral_dota2" class="resource-pill yt" target="_blank">
+                <a href="https://youtube.com/@lateral_dota2" class="resource-pill yt" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -1173,7 +1211,7 @@
                   rel="noopener noreferrer">YouTube</a> -->
 
 
-                  <a href="https://t.me/+diRLVB3k6Q9kNDA8" class="resource-pill tg" target="_blank">
+                  <a href="https://t.me/+diRLVB3k6Q9kNDA8" class="resource-pill tg" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -1183,7 +1221,7 @@
                   Telegram
                 </a>
 
-                <a href="https://www.instagram.com/lateral_tennis" class="resource-pill ig" target="_blank">
+                <a href="https://www.instagram.com/lateral_tennis" class="resource-pill ig" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -1194,7 +1232,7 @@
                 </a>
 
                 <a href="https://www.tiktok.com/@lateral_tennis" class="resource-pill tt" target="_blank"
-                  rel="noopener noreferrer" aria-label="TikTok">
+                  rel="noopener noreferrer nofollow" aria-label="TikTok">
                   <span class="icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
                       <path fill="currentColor"
@@ -1204,7 +1242,7 @@
                   TikTok
                 </a>
 
-                <a href="https://youtube.com/@lateral_tennis" class="resource-pill yt" target="_blank">
+                <a href="https://youtube.com/@lateral_tennis" class="resource-pill yt" target="_blank" rel="noopener noreferrer nofollow">
                   <span class="icon">
                     <svg viewBox="0 0 24 24">
                       <path
@@ -1474,8 +1512,8 @@
           <div class="faq-item card">
             <h3>Як розмістити рекламу в LATERAL?</h3>
             <p>Для рекламних інтеграцій та партнерства звертайтесь через <a href="#contact">форму зворотного зв'язку</a>
-              або Telegram-канал <a href="http://t.me/adsxsports" target="_blank"
-                rel="noopener noreferrer">AdsXSports</a>. LATERAL надає прозору аналітику та гнучкі формати розміщення.</p>
+              або Telegram-канал <a href="https://t.me/adsxsports" target="_blank"
+                rel="noopener noreferrer nofollow">AdsXSports</a>. LATERAL надає прозору аналітику та гнучкі формати розміщення.</p>
           </div>
 
         </div>
@@ -1492,11 +1530,11 @@
       </a>
       <p>© 2026 LATERAL. Усі права захищені.</p>
       <div class="footer-links">
-        <a href="http://t.me/lateral_ua" target="_blank" rel="noopener noreferrer"
+        <a href="https://t.me/lateral_ua" target="_blank" rel="noopener noreferrer nofollow"
           aria-label="LATERAL у Telegram">Telegram</a>
-        <a href="https://www.instagram.com/lateral.ua" target="_blank" rel="noopener noreferrer"
+        <a href="https://www.instagram.com/lateral.ua" target="_blank" rel="noopener noreferrer nofollow"
           aria-label="LATERAL в Instagram">Instagram</a>
-        <a href="http://t.me/adsxsports" target="_blank" rel="noopener noreferrer"
+        <a href="https://t.me/adsxsports" target="_blank" rel="noopener noreferrer nofollow"
           aria-label="AdsXSports — реклама в LATERAL">AdsXSports</a>
       </div>
     </div>
@@ -1573,7 +1611,7 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>

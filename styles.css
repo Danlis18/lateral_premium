@@ -416,6 +416,15 @@ body[data-theme="light"] .theme-toggle-thumb { transform: translateX(24px); }
   border-radius: 18px;
   background: var(--surface-2);
   aspect-ratio: 10 / 9;
+  width: 100%;
+  position: relative;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .media-image,
