@@ -421,10 +421,16 @@ body[data-theme="light"] .theme-toggle-thumb { transform: translateX(24px); }
 }
 
 .hero-video {
+  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  inset: 0;
+}
+
+#videoLight {
+  display: none;
 }
 
 .media-image,
