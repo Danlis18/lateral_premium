@@ -59,6 +59,13 @@ themeToggle?.addEventListener('click', () => {
   localStorage.setItem('lateral-theme', next);
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    videoDark?.play().catch(() => {});
+    videoLight?.play().catch(() => {});
+  }, 50);
+});
+
 // ── Mobile Menu ───────────────────────────────
 const menuToggle = $('#menuToggle');
 const mobileMenu = $('#mobileMenu');
