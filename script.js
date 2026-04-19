@@ -531,8 +531,15 @@ contactForm?.addEventListener('submit', async (e) => {
 });
 
 // ── Active nav link highlight on scroll ───────
-const sections   = $$('section[id]');
-const navLinks   = $$('.desktop-nav a');
+const sections = $$('section[id]');
+const navLinks = $$('.desktop-nav a');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
 
 if ('IntersectionObserver' in window && navLinks.length) {
   const navObs = new IntersectionObserver(
@@ -540,13 +547,21 @@ if ('IntersectionObserver' in window && navLinks.length) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const id = entry.target.id;
+
           navLinks.forEach((link) => {
-            link.style.color = link.getAttribute('href') === `#${id}` ? 'var(--text)' : '';
+            link.classList.toggle(
+              'active',
+              link.getAttribute('href') === `#${id}`
+            );
           });
         }
       });
     },
-    { threshold: 0.35, rootMargin: '-80px 0px -50% 0px' }
+    {
+      threshold: 0.2,                 
+      rootMargin: '-80px 0px -40% 0px'
+    }
   );
+
   sections.forEach((section) => navObs.observe(section));
 }

@@ -279,6 +279,24 @@ p {
   transform-origin: left;
   transition: transform .25s ease;
 }
+
+.desktop-nav a {
+  color: var(--muted);
+  transform: scale(1);
+  transition: all 0.2s ease;
+}
+
+.desktop-nav a:hover {
+  color: var(--text);
+}
+
+.desktop-nav a.active {
+  color: var(--text);
+  transform: scale(1.08);
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(255,255,255,0.2);
+}
+
 .desktop-nav a:hover,
 .mobile-menu a:hover,
 .footer-links a:hover { color: var(--text); }
