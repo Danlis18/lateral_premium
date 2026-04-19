@@ -1328,6 +1328,9 @@
         </div>
 
         <form class="contact-form card" novalidate>
+
+          <input type="text" name="website" style="display:none">
+
           <div class="form-row">
             <label>
               <span>Ім'я / назва</span>
@@ -1362,6 +1365,49 @@
         </div>
 
         <div class="vacancies-grid">
+          
+          <!-- Vacancy: BOX Content Manager -->
+          <div class="vacancy-card card">
+            <div class="vacancy-header">
+              <div class="vacancy-meta">
+                <span class="vacancy-tag">Контент</span>
+                <span class="vacancy-type-HOT">HOT🔥</span>
+                <span class="vacancy-type">Full-time</span>
+              </div>
+              <h3 class="vacancy-title">Контент-менеджер БОКС🥊</h3>
+              <p class="vacancy-short">Створення, редагування та публікація контенту у телеграм каналі на тематику боксу.</p>
+            </div>
+
+            <div class="vacancy-details">
+              <div class="vacancy-details-inner">
+                <h4>Про позицію</h4>
+                <p>Ми шукаємо контент-менеджера, який відповідатиме за щоденне ведення каналу LATERAL. 
+Нам потрібна людина, яка зможе забезпечити контентом площадки Telegram та Instagram.</p>
+
+<p><b>Задача: </b>створювати тексти, добирати візуали, планувати публікації та взаємодіяти з аудиторією.</p>
+                <h4>Що ми очікуємо:</h4>
+                <ul>
+                  <li>Професійне розуміння тематики боксу</li>
+                  <li>Відповідальне ставлення до дедлайнів, робочих процесів</li>
+                  <li>Якісно та грамотно оформлені публікації</li>
+                  <li>Активність, зацікавленість у розвитку</li>
+                </ul>
+                <h4>Ми пропонуємо:</h4>
+                <ul>
+                  <li>Дистанційну зайнятість</li>
+                  <li>Оплату за денну ставку</li>
+                  <li>Стабільні виплати двічі на місяць</li>
+                  <li>Можливість розвитку у цій сфері</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="vacancy-actions">
+              <button class="btn-vacancy-toggle" type="button" aria-expanded="false">Детальніше</button>
+              <button class="btn btn-primary btn-send-resume" type="button" data-position="Відеомонтажер">Надіслати
+                резюме</button>
+            </div>
+          </div>
 
           <!-- Vacancy: Content Manager -->
           <div class="vacancy-card card">
@@ -1579,6 +1625,9 @@
       </div>
 
       <form class="modal-form" id="resumeForm" novalidate>
+
+         <!-- 🚨 HONEYPOT (антиспам) -->
+  <input type="text" name="website" style="position:absolute; left:-9999px;">
 
         <input type="hidden" name="position" id="resumePosition" />
 

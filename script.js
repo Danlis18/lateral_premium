@@ -4,7 +4,8 @@
    ============================================= */
 
 // ── Helpers ───────────────────────────────────
-const API_BASE = window.location.origin;
+// const API_BASE = window.location.origin;
+const API_BASE = 'http://localhost:3000';
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

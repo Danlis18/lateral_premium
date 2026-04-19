@@ -1239,7 +1239,8 @@ textarea:focus-visible {
 }
 
 .vacancy-tag,
-.vacancy-type {
+.vacancy-type, 
+.vacancy-type-HOT{
   padding: 4px 12px;
   border-radius: 999px;
   font-size: 11px;
@@ -1252,10 +1253,26 @@ textarea:focus-visible {
   background: color-mix(in srgb, var(--accent) 12%, transparent);
   color: var(--accent-2);
 }
-.vacancy-type {
+.vacancy-type, .vacancy-type-HOT {
   border: 1px solid var(--border);
   background: color-mix(in srgb, var(--surface-2) 80%, transparent);
   color: var(--muted);
+}
+
+.vacancy-type-HOT {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 4px 10px;
+  padding-left: 14px;
+  border-radius: 999px;
+
+  background: rgba(255, 60, 60, 0.12);
+  color: #ff5a5a;
+  border: 1px solid rgba(255, 60, 60, 0.25);
+  box-shadow: 0 0 10px rgba(255, 60, 60, 0.15);
+  font-weight: 600;
 }
 
 .vacancy-title {
@@ -1305,6 +1322,7 @@ textarea:focus-visible {
   flex-wrap: wrap;
   margin-top: auto;
 }
+
 
 .btn-vacancy-toggle {
   padding: 10px 18px;
@@ -1539,6 +1557,8 @@ textarea:focus-visible {
   h2            { max-width: 100%; }
   .hero-copy    { max-width: 100%; }
   .hero-text    { max-width: 72ch; }
+
+  
 }
 
 /* ── Responsive — Tablet (≤860px) ────────────── */

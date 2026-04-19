@@ -1,5 +1,10 @@
 'use strict';
 
+// ── Rate limit (anti-spam) ───────────────────
+const rateLimitMap = new Map();
+const LIMIT = 5; 
+const WINDOW = 24 * 60 * 60 * 1000;
+
 const express = require('express');
 const cors    = require('cors');
 const multer  = require('multer');
@@ -42,6 +47,30 @@ app.use('/api', (req, _res, next) => {
 // Serve the static site from the same folder.
 // Visit http://localhost:3000 to see the full site.
 app.use(express.static(path.join(__dirname)));
+
+
+
+function isRateLimited(ip) {
+  const now = Date.now();
+
+  if (!rateLimitMap.has(ip)) {
+    rateLimitMap.set(ip, []);
+  }
+
+  const timestamps = rateLimitMap.get(ip);
+
+  // видаляємо старі (старше 24h)
+  const filtered = timestamps.filter(ts => now - ts < WINDOW);
+
+  rateLimitMap.set(ip, filtered);
+
+  if (filtered.length >= LIMIT) {
+    return true;
+  }
+
+  filtered.push(now);
+  return false;
+}
 
 // ─────────────────────────────────────────────
 // Multer — file upload config
@@ -119,7 +148,21 @@ async function sendDocumentToTelegram(filePath, filename, mimetype, caption) {
 // ─────────────────────────────────────────────
 app.use('/api/contact', express.json());
 app.post('/api/contact', async (req, res) => {
-  const { name, contact, message } = req.body ?? {};
+  const { name, contact, message, website } = req.body ?? {};
+
+// 🚨 HONEYPOT
+if (website) {
+  return res.status(400).json({ ok: false });
+}
+  
+  const ip = req.ip;
+
+  if (isRateLimited(ip)) {
+    return res.status(429).json({
+      ok: false,
+      error: 'Занадто багато запитів. Спробуйте завтра.'
+    });
+  }
 
   // Validate
   if (!name?.trim() || !contact?.trim() || !message?.trim()) {
@@ -150,13 +193,26 @@ app.post('/api/contact', async (req, res) => {
 // POST /api/job — vacancy / resume submission
 // ─────────────────────────────────────────────
 app.post('/api/job', upload.single('file'), async (req, res) => {
+ const { name, contact, message, position, website } = req.body ?? {};
+
+// 🚨 HONEYPOT
+if (website) {
+  return res.status(400).json({ ok: false });
+}
+  
+  const ip = req.ip;
+
+  if (isRateLimited(ip)) {
+    return res.status(429).json({
+      ok: false,
+      error: 'Занадто багато заявок. Спробуйте завтра.'
+    });
+  }
   // ── Debug ──────────────────────────────────────
   console.log('=== /api/job HIT ===');
   console.log('Content-Type:', req.headers['content-type']);
   console.log('req.body:', JSON.stringify(req.body));
   console.log('req.file:', req.file ?? 'no file');
-
-  const { name, contact, message, position } = req.body ?? {};
 
   // Validate required text fields
   if (!name?.trim() || !contact?.trim() || !message?.trim()) {
