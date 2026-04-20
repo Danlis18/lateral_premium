@@ -1,7 +1,7 @@
 'use strict';
 
 // ── Rate limit (anti-spam) ───────────────────
-const rateLimitMap = new Map();
+const DB_FILE = './ratelimit.json';
 const LIMIT = 5; 
 const WINDOW = 24 * 60 * 60 * 1000;
 
@@ -10,6 +10,36 @@ const cors    = require('cors');
 const multer  = require('multer');
 const path    = require('path');
 const fs      = require('fs');
+
+function loadDB() {
+  if (!fs.existsSync(DB_FILE)) return {};
+  return JSON.parse(fs.readFileSync(DB_FILE, 'utf-8'));
+}
+
+function saveDB(data) {
+  fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
+}
+
+function isRateLimited(ip) {
+  const db = loadDB();
+  const now = Date.now();
+
+  if (!db[ip]) {
+    db[ip] = [];
+  }
+
+  // чистимо старі записи
+  db[ip] = db[ip].filter(ts => now - ts < WINDOW);
+
+  if (db[ip].length >= LIMIT) {
+    return true;
+  }
+
+  db[ip].push(now);
+  saveDB(db);
+
+  return false;
+}
 
 // ─────────────────────────────────────────────
 // Config
@@ -26,6 +56,7 @@ const TELEGRAM_URL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 // App setup
 // ─────────────────────────────────────────────
 const app = express();
+app.set('trust proxy', true);
 
 app.use(cors());                    // allow cross-origin requests during dev
 
@@ -45,32 +76,32 @@ app.use('/api', (req, _res, next) => {
 });
 
 // Serve the static site from the same folder.
-// Visit http://localhost:3000 to see the full site.
+// Visit https://lateral.com.ua/contact to see the full site.
 app.use(express.static(path.join(__dirname)));
 
 
 
-function isRateLimited(ip) {
-  const now = Date.now();
+// function isRateLimited(ip) {
+//   const now = Date.now();
 
-  if (!rateLimitMap.has(ip)) {
-    rateLimitMap.set(ip, []);
-  }
+//   if (!rateLimitMap.has(ip)) {
+//     rateLimitMap.set(ip, []);
+//   }
 
-  const timestamps = rateLimitMap.get(ip);
+//   const timestamps = rateLimitMap.get(ip);
 
-  // видаляємо старі (старше 24h)
-  const filtered = timestamps.filter(ts => now - ts < WINDOW);
+//   // видаляємо старі (старше 24h)
+//   const filtered = timestamps.filter(ts => now - ts < WINDOW);
 
-  rateLimitMap.set(ip, filtered);
+//   rateLimitMap.set(ip, filtered);
 
-  if (filtered.length >= LIMIT) {
-    return true;
-  }
+//   if (filtered.length >= LIMIT) {
+//     return true;
+//   }
 
-  filtered.push(now);
-  return false;
-}
+//   filtered.push(now);
+//   return false;
+// }
 
 // ─────────────────────────────────────────────
 // Multer — file upload config
@@ -155,7 +186,8 @@ if (website) {
   return res.status(400).json({ ok: false });
 }
   
-  const ip = req.ip;
+
+const ip = req.ip;
 
   if (isRateLimited(ip)) {
     return res.status(429).json({
@@ -199,8 +231,9 @@ app.post('/api/job', upload.single('file'), async (req, res) => {
 if (website) {
   return res.status(400).json({ ok: false });
 }
-  
-  const ip = req.ip;
+
+
+const ip = req.ip;
 
   if (isRateLimited(ip)) {
     return res.status(429).json({
